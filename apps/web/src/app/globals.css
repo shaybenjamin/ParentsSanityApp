@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 253 248 240;
+    --foreground: 41 37 33;
+    --card: 255 255 255;
+    --card-foreground: 41 37 33;
+    --border: 229 220 207;
+    --input: 229 220 207;
+    --ring: 212 144 58;
+    --radius: 0.75rem;
+
+    --primary: 77 128 80;
+    --primary-foreground: 255 255 255;
+
+    --secondary: 212 144 58;
+    --secondary-foreground: 255 255 255;
+
+    --muted: 242 236 226;
+    --muted-foreground: 120 110 98;
+
+    --accent: 212 144 58;
+    --accent-foreground: 255 255 255;
+
+    --destructive: 220 53 69;
+    --destructive-foreground: 255 255 255;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-sand-50 text-gray-800 antialiased;
+    font-family: system-ui, -apple-system, sans-serif;
+  }
+
+  [dir='rtl'] {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer utilities {
+  .card-base {
+    @apply bg-white rounded-2xl border border-sand-200 shadow-sm;
+  }
+
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+
+  .section-title {
+    @apply text-sm font-semibold uppercase tracking-wide text-gray-400;
+  }
+}

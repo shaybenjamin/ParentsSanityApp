@@ -1,0 +1,170 @@
+{
+  "common": {
+    "appName": "Family Hub",
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "empty": "Nothing here yet",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "add": "Add",
+    "done": "Done",
+    "back": "Back",
+    "minutes": "{count} min",
+    "favorite": "Favorite",
+    "unfavorite": "Remove from favorites",
+    "close": "Close",
+    "reset": "Reset",
+    "apply": "Apply",
+    "all": "All",
+    "filters": "Filters",
+    "clearFilters": "Clear filters"
+  },
+  "nav": {
+    "home": "Home",
+    "schedule": "Schedule",
+    "activities": "Activities",
+    "media": "Media",
+    "kitchen": "Kitchen",
+    "settings": "Settings"
+  },
+  "dashboard": {
+    "greeting": "Good {timeOfDay}",
+    "today": "Today",
+    "quickActions": "Quick Actions",
+    "suggestActivity": "Suggest Activity",
+    "quickSnack": "Quick Snack",
+    "bedtimeMusic": "Bedtime Music",
+    "todaySchedule": "Today's Schedule",
+    "viewAll": "View all",
+    "noScheduleYet": "No schedule for today yet.",
+    "applyTemplate": "Apply a template to get started",
+    "morning": "morning",
+    "afternoon": "afternoon",
+    "evening": "evening",
+    "night": "night",
+    "progressLabel": "{completed} of {total} done",
+    "favoriteActivities": "Favorite Activities",
+    "favoriteRecipes": "Quick Meals"
+  },
+  "schedule": {
+    "title": "Schedule",
+    "todayTab": "Today",
+    "templatesTab": "Templates",
+    "noItems": "No items scheduled",
+    "addItem": "Add item",
+    "markDone": "Mark done",
+    "markUndone": "Mark as not done",
+    "resetDay": "Reset day",
+    "applyTemplate": "Apply template",
+    "createTemplate": "Create template",
+    "defaultTemplate": "Default",
+    "segments": {
+      "MORNING": "Morning",
+      "AFTERNOON": "Afternoon",
+      "EVENING": "Evening",
+      "NIGHT": "Night"
+    },
+    "newItem": {
+      "title": "New Schedule Item",
+      "titleLabel": "Title",
+      "titleHe": "Title (Hebrew)",
+      "startTime": "Start time",
+      "endTime": "End time",
+      "segment": "Part of day",
+      "icon": "Icon (emoji)"
+    }
+  },
+  "activities": {
+    "title": "Activities",
+    "suggest": "Suggest one",
+    "doNow": "Do this now",
+    "duration": "{min} min",
+    "indoor": "Indoor",
+    "outdoor": "Outdoor",
+    "supervision": "Supervision needed",
+    "noSupervision": "Independent play",
+    "materials": "Materials needed",
+    "noActivities": "No activities found",
+    "filters": {
+      "all": "All",
+      "energy": "Energy",
+      "location": "Location",
+      "duration": "Duration",
+      "favoritesOnly": "Favorites only"
+    },
+    "categories": {
+      "CREATIVE": "Creative",
+      "PHYSICAL": "Physical",
+      "SENSORY": "Sensory",
+      "COGNITIVE": "Cognitive",
+      "MUSIC": "Music",
+      "OUTDOOR": "Outdoor",
+      "QUIET": "Quiet",
+      "SOCIAL": "Social"
+    },
+    "energyLevels": {
+      "LOW": "Low energy",
+      "MEDIUM": "Medium energy",
+      "HIGH": "High energy"
+    }
+  },
+  "media": {
+    "title": "Media",
+    "playlists": "Playlists",
+    "music": "Music",
+    "video": "Video",
+    "noPlaylists": "No playlists yet",
+    "addPlaylist": "Add playlist",
+    "tracks": "{count} tracks",
+    "moods": {
+      "CALM": "Calm",
+      "ENERGETIC": "Energetic",
+      "BEDTIME": "Bedtime",
+      "BACKGROUND": "Background"
+    },
+    "types": {
+      "MUSIC": "Music",
+      "VIDEO": "Video",
+      "MIXED": "Mixed"
+    },
+    "openPlaylist": "Open playlist",
+    "playNow": "Play now"
+  },
+  "kitchen": {
+    "title": "Kitchen",
+    "recipes": "Recipes",
+    "quickSnacks": "Quick Snacks",
+    "noRecipes": "No recipes found",
+    "prepTime": "{min} min prep",
+    "toddlerFriendly": "Toddler friendly",
+    "stepByStep": "Step by step",
+    "ingredients": "Ingredients",
+    "steps": "Steps",
+    "mealTypes": {
+      "BREAKFAST": "Breakfast",
+      "LUNCH": "Lunch",
+      "DINNER": "Dinner",
+      "SNACK": "Snack"
+    },
+    "difficulty": {
+      "EASY": "Easy",
+      "MEDIUM": "Medium",
+      "HARD": "Hard"
+    }
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "childName": "Child's name",
+    "childAge": "Child's age",
+    "childAgeMonths": "{months} months",
+    "householdName": "Household name",
+    "saved": "Settings saved",
+    "languages": {
+      "en": "English",
+      "he": "עברית"
+    }
+  }
+}

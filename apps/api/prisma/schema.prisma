@@ -1,0 +1,225 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum Segment {
+  MORNING
+  AFTERNOON
+  EVENING
+  NIGHT
+}
+
+enum ActivityCategory {
+  CREATIVE
+  PHYSICAL
+  SENSORY
+  COGNITIVE
+  MUSIC
+  OUTDOOR
+  QUIET
+  SOCIAL
+}
+
+enum EnergyLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum MediaType {
+  MUSIC
+  VIDEO
+  MIXED
+}
+
+enum PlaylistMood {
+  CALM
+  ENERGETIC
+  BEDTIME
+  BACKGROUND
+}
+
+enum MealType {
+  BREAKFAST
+  LUNCH
+  DINNER
+  SNACK
+}
+
+enum Difficulty {
+  EASY
+  MEDIUM
+  HARD
+}
+
+// ─── Schedule ────────────────────────────────────────────────────────────────
+
+/// Reusable daily templates (e.g. "Weekday Routine", "Weekend Routine")
+model RoutineTemplate {
+  id        String        @id @default(cuid())
+  name      String
+  nameHe    String
+  isDefault Boolean       @default(false)
+  items     RoutineItem[]
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
+}
+
+model RoutineItem {
+  id         String          @id @default(cuid())
+  templateId String
+  template   RoutineTemplate @relation(fields: [templateId], references: [id], onDelete: Cascade)
+  title      String
+  titleHe    String
+  startTime  String // "HH:mm"
+  endTime    String // "HH:mm"
+  segment    Segment
+  icon       String?
+  order      Int
+  createdAt  DateTime        @default(now())
+  updatedAt  DateTime        @updatedAt
+
+  @@index([templateId])
+}
+
+/// One-per-day living schedule. Auto-created from a template or manually.
+model DailySchedule {
+  id        String      @id @default(cuid())
+  date      DateTime    @db.Date
+  items     DailyItem[]
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  @@unique([date])
+}
+
+model DailyItem {
+  id          String        @id @default(cuid())
+  scheduleId  String
+  schedule    DailySchedule @relation(fields: [scheduleId], references: [id], onDelete: Cascade)
+  title       String
+  titleHe     String
+  startTime   String
+  endTime     String
+  segment     Segment
+  icon        String?
+  isCompleted Boolean       @default(false)
+  order       Int
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  @@index([scheduleId])
+}
+
+// ─── Activities ───────────────────────────────────────────────────────────────
+
+model Activity {
+  id               String           @id @default(cuid())
+  title            String
+  titleHe          String
+  description      String?
+  descriptionHe    String?
+  category         ActivityCategory
+  durationMin      Int
+  energyLevel      EnergyLevel
+  isIndoor         Boolean          @default(true)
+  materials        String[]
+  materialsHe      String[]
+  needsSupervision Boolean          @default(true)
+  ageMinMonths     Int              @default(0)
+  ageMaxMonths     Int              @default(60)
+  isFavorite       Boolean          @default(false)
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+
+  @@index([category])
+  @@index([energyLevel])
+}
+
+// ─── Media ────────────────────────────────────────────────────────────────────
+
+model Playlist {
+  id         String       @id @default(cuid())
+  title      String
+  titleHe    String
+  type       MediaType
+  mood       PlaylistMood
+  isFavorite Boolean      @default(false)
+  items      MediaItem[]
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @updatedAt
+
+  @@index([mood])
+}
+
+model MediaItem {
+  id           String   @id @default(cuid())
+  playlistId   String
+  playlist     Playlist @relation(fields: [playlistId], references: [id], onDelete: Cascade)
+  title        String
+  titleHe      String
+  url          String?
+  thumbnailUrl String?
+  durationSec  Int?
+  order        Int
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([playlistId])
+}
+
+// ─── Kitchen ──────────────────────────────────────────────────────────────────
+
+model Recipe {
+  id              String       @id @default(cuid())
+  title           String
+  titleHe         String
+  description     String?
+  descriptionHe   String?
+  mealType        MealType
+  difficulty      Difficulty
+  prepMinutes     Int
+  toddlerFriendly Boolean      @default(true)
+  ingredients     String[]
+  ingredientsHe   String[]
+  steps           RecipeStep[]
+  isFavorite      Boolean      @default(false)
+  tags            String[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  @@index([mealType])
+  @@index([difficulty])
+}
+
+model RecipeStep {
+  id            String  @id @default(cuid())
+  recipeId      String
+  recipe        Recipe  @relation(fields: [recipeId], references: [id], onDelete: Cascade)
+  order         Int
+  instruction   String
+  instructionHe String
+  durationMin   Int?
+
+  @@index([recipeId])
+}
+
+// ─── Settings ─────────────────────────────────────────────────────────────────
+
+/// Single-row table for household preferences.
+/// Single-user MVP — designed for easy multi-household extension.
+model Settings {
+  id             String   @id @default(cuid())
+  language       String   @default("en")
+  childName      String   @default("Little One")
+  childAgeMonths Int      @default(19)
+  householdName  String   @default("Our Family")
+  updatedAt      DateTime @updatedAt
+}

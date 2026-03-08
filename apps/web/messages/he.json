@@ -1,0 +1,170 @@
+{
+  "common": {
+    "appName": "Family Hub",
+    "loading": "טוען...",
+    "error": "משהו השתבש",
+    "empty": "עדיין אין כלום כאן",
+    "save": "שמור",
+    "cancel": "ביטול",
+    "delete": "מחק",
+    "edit": "ערוך",
+    "add": "הוסף",
+    "done": "סיום",
+    "back": "חזרה",
+    "minutes": "{count} דקות",
+    "favorite": "מועדפים",
+    "unfavorite": "הסר ממועדפים",
+    "close": "סגור",
+    "reset": "איפוס",
+    "apply": "החל",
+    "all": "הכל",
+    "filters": "סינון",
+    "clearFilters": "נקה סינון"
+  },
+  "nav": {
+    "home": "בית",
+    "schedule": "לוח זמנים",
+    "activities": "פעילויות",
+    "media": "מדיה",
+    "kitchen": "מטבח",
+    "settings": "הגדרות"
+  },
+  "dashboard": {
+    "greeting": "בוקר {timeOfDay}",
+    "today": "היום",
+    "quickActions": "פעולות מהירות",
+    "suggestActivity": "הצע פעילות",
+    "quickSnack": "חטיף מהיר",
+    "bedtimeMusic": "מוזיקת שינה",
+    "todaySchedule": "לוח זמנים היום",
+    "viewAll": "הצג הכל",
+    "noScheduleYet": "אין לוח זמנים להיום עדיין.",
+    "applyTemplate": "החל תבנית להתחלה",
+    "morning": "טוב",
+    "afternoon": "צהריים טובים",
+    "evening": "ערב טוב",
+    "night": "לילה טוב",
+    "progressLabel": "{completed} מתוך {total} הושלמו",
+    "favoriteActivities": "פעילויות מועדפות",
+    "favoriteRecipes": "ארוחות מהירות"
+  },
+  "schedule": {
+    "title": "לוח זמנים",
+    "todayTab": "היום",
+    "templatesTab": "תבניות",
+    "noItems": "אין פריטים בלוח הזמנים",
+    "addItem": "הוסף פריט",
+    "markDone": "סמן כהושלם",
+    "markUndone": "סמן כלא הושלם",
+    "resetDay": "איפוס יום",
+    "applyTemplate": "החל תבנית",
+    "createTemplate": "צור תבנית",
+    "defaultTemplate": "ברירת מחדל",
+    "segments": {
+      "MORNING": "בוקר",
+      "AFTERNOON": "צהריים",
+      "EVENING": "ערב",
+      "NIGHT": "לילה"
+    },
+    "newItem": {
+      "title": "פריט לוח זמנים חדש",
+      "titleLabel": "כותרת",
+      "titleHe": "כותרת (עברית)",
+      "startTime": "שעת התחלה",
+      "endTime": "שעת סיום",
+      "segment": "חלק ביום",
+      "icon": "אייקון (אמוג'י)"
+    }
+  },
+  "activities": {
+    "title": "פעילויות",
+    "suggest": "הצע אחת",
+    "doNow": "עשו עכשיו",
+    "duration": "{min} דק'",
+    "indoor": "בפנים",
+    "outdoor": "בחוץ",
+    "supervision": "דרושה פיקוח",
+    "noSupervision": "משחק עצמאי",
+    "materials": "חומרים נדרשים",
+    "noActivities": "לא נמצאו פעילויות",
+    "filters": {
+      "all": "הכל",
+      "energy": "אנרגיה",
+      "location": "מיקום",
+      "duration": "משך",
+      "favoritesOnly": "מועדפים בלבד"
+    },
+    "categories": {
+      "CREATIVE": "יצירה",
+      "PHYSICAL": "פיזי",
+      "SENSORY": "חושי",
+      "COGNITIVE": "קוגניטיבי",
+      "MUSIC": "מוזיקה",
+      "OUTDOOR": "חוצות",
+      "QUIET": "שקט",
+      "SOCIAL": "חברתי"
+    },
+    "energyLevels": {
+      "LOW": "אנרגיה נמוכה",
+      "MEDIUM": "אנרגיה בינונית",
+      "HIGH": "אנרגיה גבוהה"
+    }
+  },
+  "media": {
+    "title": "מדיה",
+    "playlists": "פלייליסטים",
+    "music": "מוזיקה",
+    "video": "וידאו",
+    "noPlaylists": "אין פלייליסטים עדיין",
+    "addPlaylist": "הוסף פלייליסט",
+    "tracks": "{count} שירים",
+    "moods": {
+      "CALM": "רגוע",
+      "ENERGETIC": "אנרגטי",
+      "BEDTIME": "שינה",
+      "BACKGROUND": "רקע"
+    },
+    "types": {
+      "MUSIC": "מוזיקה",
+      "VIDEO": "וידאו",
+      "MIXED": "מעורב"
+    },
+    "openPlaylist": "פתח פלייליסט",
+    "playNow": "נגן עכשיו"
+  },
+  "kitchen": {
+    "title": "מטבח",
+    "recipes": "מתכונים",
+    "quickSnacks": "חטיפים מהירים",
+    "noRecipes": "לא נמצאו מתכונים",
+    "prepTime": "הכנה {min} דקות",
+    "toddlerFriendly": "מתאים לפעוטות",
+    "stepByStep": "שלב אחר שלב",
+    "ingredients": "מרכיבים",
+    "steps": "שלבים",
+    "mealTypes": {
+      "BREAKFAST": "ארוחת בוקר",
+      "LUNCH": "ארוחת צהריים",
+      "DINNER": "ארוחת ערב",
+      "SNACK": "חטיף"
+    },
+    "difficulty": {
+      "EASY": "קל",
+      "MEDIUM": "בינוני",
+      "HARD": "קשה"
+    }
+  },
+  "settings": {
+    "title": "הגדרות",
+    "language": "שפה",
+    "childName": "שם הילד",
+    "childAge": "גיל הילד",
+    "childAgeMonths": "{months} חודשים",
+    "householdName": "שם המשפחה",
+    "saved": "ההגדרות נשמרו",
+    "languages": {
+      "en": "English",
+      "he": "עברית"
+    }
+  }
+}
